@@ -1,16 +1,19 @@
 const passport = require("passport");
-const LocalStrategy = require("passport-local");
+const LocalStrategy = require("passport-local").Strategy;
+
 const userDB = {
-    id: 1,
+    id: 136345,
     email: "test@mail.ru",
     password: "123",
 };
+
 passport.serializeUser(function (user, done) {
-    Console.log("Сериализация ", user);
+    console.log("Сериализация: ", user);
     done(null, user.id);
 });
+
 passport.deserializeUser(function (id, done) {
-    Console.log("Десерализация ", id);
+    console.log("Десериализация: ", id);
     const user = userDB.id === id ? userDB : false;
     done(null, user);
 });
@@ -21,7 +24,7 @@ passport.use(
         password,
         done
     ) {
-        if (email === userDB.email && passport === userDB.password) {
+        if (email === userDB.email && password === userDB.password) {
             return done(null, userDB);
         } else {
             return done(null, false);

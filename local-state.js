@@ -25,7 +25,6 @@ module.exports = {
             geometry: {
                 coordinates: [54.97687166230297, 82.8889010252334],
             },
-            commit: [{ user_id: "123", text: "asfssd" }],
         },
         {
             type: "exhibit",
@@ -73,7 +72,6 @@ module.exports = {
             geometry: {
                 coordinates: [54.9429957186813, 83.71134905859375],
             },
-            commit: [{ user_id: "123", text: "asfssd" }],
         },
         {
             type: "exhibit",
@@ -121,7 +119,6 @@ module.exports = {
             geometry: {
                 coordinates: [53.75252502115848, 83.74430804296875],
             },
-            commit: [{ user_id: "123", text: "asfssd" }],
         },
         {
             type: "exhibit",
