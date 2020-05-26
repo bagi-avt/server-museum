@@ -10,14 +10,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.6.1",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "fs": "^0.0.1-security",
     "mongoose": "^5.9.14",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
-    "session-file-store": "^1.4.0"
+    "session-file-store": "^1.4.0",
+    "three": "^0.116.1",
+    "vblob": "^1.0.2"
   }
 }

@@ -20,7 +20,7 @@ passport.use(
             clientID: keys.google.clientID,
             clientSecret: keys.google.clientSecret,
         },
-        (accessToken, refreshToken, profile, done) => {
+        (accessToken, refreshToken, profile, done, ...a) => {
             //поиск совпадений в БД findOne
             User.findOne({ googleId: profile.id }).then((currentUser) => {
                 if (currentUser) {

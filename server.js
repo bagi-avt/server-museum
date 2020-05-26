@@ -9,6 +9,7 @@ const cors = require("cors");
 const app = express();
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+var fs = require("fs");
 
 app.use(cors());
 
@@ -29,23 +30,28 @@ mongoose
     })
     .then(() => console.log("connet mongodb OK"))
     .catch((err) => console.log(err));
-
-app.get("/", (reg, res) => {
-    res.send("Hello World=))");
-});
+app.use(cors());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/profile", profileRoutes);
+
 const authCheck = (req, res, next) => {
     if (!req.user) {
-        res.redirect("/auth/login");
+        res.err();
     } else {
         next();
     }
 };
-app.get("/api/exhibits", (reg, res) => {
+app.use("/api/profile", authCheck, (req, res) => {
+    res.send(req.user);
+});
+app.get("/api/exhibits", authCheck, (req, res) => {
     res.send(state);
 });
+
+
+app.use('/static', express.static('data/modelCat'))//export 3d model 
+
+
 app.listen(5000, function () {
     console.log("API app start");
 });

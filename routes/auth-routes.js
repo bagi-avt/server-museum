@@ -9,10 +9,10 @@ router.get(
 );
 router.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("/");
+    res.redirect("/login");
 });
 router.get("/google/redirect/", passport.authenticate("google"), (req, res) => {
-    res.send(req.user);
+    res.redirect("http://localhost:3000/home");
 });
 
 module.exports = router;
