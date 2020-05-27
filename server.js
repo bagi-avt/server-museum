@@ -48,9 +48,7 @@ app.get("/api/exhibits", authCheck, (req, res) => {
     res.send(state);
 });
 
-
-app.use('/static', express.static('data/modelCat'))//export 3d model 
-
+app.use("/static", express.static("data")); //export 3d model
 
 app.listen(5000, function () {
     console.log("API app start");
