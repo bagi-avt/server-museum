@@ -21,7 +21,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "session-file-store": "^1.4.0",
-    "three": "^0.116.1",
+    "three": "^0.137.0",
     "vblob": "^1.0.2"
   }
 }
